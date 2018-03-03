@@ -200,7 +200,7 @@ titlepage-rule-color: "fad500"
 titlepage-rule-height: 2
 
 tags: [Moonfish, ICO, Whitepaper]
-date: 2018-03-20
+date: \today
 
 bibliography: whitepaper
 
