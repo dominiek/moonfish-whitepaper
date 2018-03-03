@@ -174,7 +174,7 @@ title: "Moonfish Whitepaper"
 subtitle: "Aesculeae domus vincemur et Veneris adsuetus lapsum"
 
 abstract: |
-
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit ante vel scelerisque consequat. Integer dapibus nulla cursus urna dignissim auctor. Proin sollicitudin et ipsum ut luctus. In id velit auctor, facilisis augue ac, rhoncus diam. Nam vitae dolor nisi. In hac habitasse platea dictumst. Praesent ornare nisi sit amet orci rutrum, sed tempor tortor condimentum. Nunc eu lacus imperdiet, imperdiet diam sed, tincidunt erat.
 
 company:
 - name: Moonfish LLC
