@@ -166,12 +166,13 @@ $endif$
 \title{%
   $title$ \\
   \large $subtitle$}
-$for(author)$
-  \author{
-    $author.name$ \\
+\author{
+  $for(author)$
+    $author.name$\\
     $author.affiliation$
-  }
-$endfor$
+    \and
+  $endfor$
+}
 \setlength{\droptitle}{-7em}
 
 %

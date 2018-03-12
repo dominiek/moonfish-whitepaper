@@ -139,6 +139,9 @@ author:
 - name: Dominiek Ter Heide
   affiliation: Rekall.ai
   email: dominiek@rekall.ai
+- name: Kirk McMurray
+  affiliation: Rekall.ai
+  email: kirk@rekall.ai
 
 titlepage: false
 titlepage-logo: include/moonfish-logo.pdf
