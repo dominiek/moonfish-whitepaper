@@ -166,7 +166,13 @@ $endif$
 \title{%
   $title$ \\
   \large $subtitle$}
-\author{$for(author)$$author$$sep$, $endfor$}
+$for(author)$
+  \author{
+    $author.name$ \\
+    $author.affiliation$
+  }
+$endfor$
+\setlength{\droptitle}{-4em}
 
 %
 % tables

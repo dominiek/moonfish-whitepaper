@@ -1,9 +1,9 @@
 
-## Background
+## 1. Background
 
 On 30 April 2016 a bold attempt was made to launch the world’s first Decentralized Autonomous Organization (DAO) on the Ethereum blockchain [@ethereum, @the_dao]. This was the first attempt at the creation of a new kind of token that would empower it’s holders to exert control on the asset they owned. Unfortunately, this first attempt blew up spectacularly after a security flaw was exploited and millions of dollars were drained from the DAO. This incident resulted in the Ethereum Classic (ETC) / Ethereum (ETH) hard fork - one of the first of its kind. Even though the DAO was a failure, it showed the world how powerful a crowd sale on the blockchain could be. The era of the Initial Coin Offering (ICO) - or token sale - had started.
 
-Fast forward to today (Q1 2018) and there have been many hundreds of ICOs to date. Startups in 2017 raised \$5.6BN dollars using token sales, despite a success rate of only 48% [@ico_success]. Q1 2018 saw a slowdown in the crypto markets at large, but given the fact that 30% of all seed stage capital came from ICOs [@icos_2017_review], it’s likely that the ICO as a fundraising vehicle will sustain. Right now most prominent ICOs are centered around some form of decentralization platform, but ICOs are increasingly seen as a means to raise funds for any kinds of startup or even later stage company (reverse ICOs).
+Fast forward to today (Q1 2018) and there have been many hundreds of ICOs to date. Startups in 2017 raised \$5.6BN dollars using token sales, despite a success rate of only 48% [@ico_success]. Q1 2018 saw a slowdown in the crypto markets at large, but given the fact that 30% of all seed stage capital came from ICOs [@icos_2017_review], it’s likely that the ICO as a fundraising vehicle will sustain. Right now most prominent ICOs are centered around some form of decentralization platform, but ICOs are increasingly seen as a means to raise funds for any kinds of startup or even later stage company (reverse ICOs) [@icos_dont_bite_off, @ico_rounds].
 
 It is not unreasonable to assume the long tail of publicly traded tokens will include new kinds of assets such as real estate, vehicles, collectables or even living animals [@real_estate_crypto, @sentinel_chain]. As a result new ICOs have sprung up that attempt to create marketplaces centered around a given asset type.
 
@@ -15,18 +15,18 @@ In order to facilitate the offering of new assets on public blockchains we need 
 
 There are a variety of ICO platforms [@cryptonomos, @waves, @blockstarter, @coinlaunch] that attempt to make these token sales easier, but ironically most employ a proprietary model and a new marketplace middleman is formed. It is Moonfish’s goal to provide open, secure, publicly auditable and reliable open source software to facilitate token sales.
 
-## The Moonfish Platform
+## 2. The Moonfish Platform
 
 Typically the focus of token sales tools is to ease the creation and deployment of the smart contracts related to a token sale, but there is a lack of mature tools for managing the token sale end-to-end.
 
-IMAGE
+\noindent\includegraphics{include/diagrams/token_sale_cycle.png}
 
 The Moonfish platform provides an end-to-end solution for all stages in the token sale process:
 
-IMAGE
+\noindent\includegraphics{include/diagrams/token_sale_cycle_components.png}
 
 
-## Token Sale Flow
+### 2.1 Token Sale Flow
 
 Each token sale has their own crowd sale dynamics coded into the smart contracts. For example, some token sales provide bonuses to those who participate during certain time periods. Additionally, there have been a wide variety of different user flows in acquiring these tokens in the sale process. These user flows can be categorized as follows:
 
@@ -44,7 +44,7 @@ Flow D is used by a lot of popular ICOs. The benefit of managing wallets is that
 
 Moonfish’s core token sale flow is based on Flow C - with added best practices to minimize security risks.
 
-## Applicant Management
+### 2.2 Applicant Management
 
 In 2017, a total of \$115M Ethereum was phished from ICO participants [@ethereum_cybercrime]. Safe-harboring communication between applicant and the token sellers is paramount. More exactly, there are two kinds of breaches that need to be protected against:
 
@@ -57,7 +57,7 @@ In order to minimize breach B - Moonfish will generate a unique mnemonic phrase 
 
 In addition to this, Moonfish will integrate with third party email providers such as Postmark [@postmark_security] that support additional identity and verification measures such as DKIM, SPF and DMARC [@dkim, @spf, @dmarc].
 
-## Token Sale Portal & Administration System
+### 2.3 Token Sale Portal & Administration System
 
 The Moonfish token sale solution includes a default portal. This portal provides all promotional information about the token sale as well as the current status and parameters of the token sale process.
 
@@ -67,19 +67,19 @@ To increase the security of the portal, anti-phishing warnings and confirmations
 
 The user interface for applicants, the portal and the administration system is a self contained app that interfaces with a JSON API backend. This frontend application is implemented using React [@react], Redux [@redux] and Semantic UI [@semanticui]. The backend system is fully controllable through well tested and documented JSON APIs.
 
-## Whitelisting Mechanics
+### 2.4 Whitelisting Mechanics
 
 It’s become common practice for token sales to have a period of whitelist registration before starting the active token sale period. During this period, applicants can register to the whitelist and they will receive updates from the token sale administrators when participation in the token sale is possible. Having a whitelist of applicants allows for a token sale process that’s more organized and controlled.
 
-IMAGE
+\noindent\includegraphics{include/diagrams/applicant_types.png}
 
 There are numerous configurations possible here. Some may choose to limit the number of applicants, and not allow any further registrations. Some may choose to allow oversubscribing of the whitelist so that applicants can participate in a future funding round. Or some may choose to also limit the number of whitelist applicants based on the amount of capital that’s “soft-circled”. Moonfish will support a plethora of different configurations here.
 
-## Open Software
+### 2.5 Open Software
 
 The core Moonfish platform is completely free and open source. This allows us to strengthen the platform by harnessing the expertise of the open source community. Also, all source code is completely auditable by anyone that chooses to use the Moonfish platform for their ICOs. As is increasingly common, in the future, Moonfish can offer bounties for bug discovery and suggested patches.
 
-## Other Security Considerations
+### 2.6 Other Security Considerations
 
 Moonfish will provide an open forum for the developer community to strengthen its security. In addition to the aforementioned security and reliability decisions, we’ve added the following requirements:
 
@@ -92,7 +92,7 @@ Moonfish will provide an open forum for the developer community to strengthen it
 - Both JWT and magic tokens expire within a short time period (2 hours and 1 hour respectively).
 - All solicited input fields are validated and that validation is unit tested.
 
-## Evolving Best Practices
+### 2.7 Evolving Best Practices
 
 The crypto and in particular the ICO space is a very nascent sector that’s still developing it’s best practices. These practices span across many different disciplines such as IT, software, marketing and legal.
 
@@ -101,39 +101,32 @@ It is the aim of Moonfish to provide a framework for discussion of these practic
 A good starting point for this is providing templates for peripheral matters such as:
 
 - Default ERC20 Smart Contracts. The approach here is to take what’s best out there - such as the excellent work being done by the Zeppelin foundation - and incorporate it [@openzeppelin_contracts].
-- Legal templates for different kinds of crowd sales.
+- Legal templates for different kinds of crowd sales - taking into account the developing regulatory landscape [@securities_law_framework, @howey_test]
 - Technical white paper template. The white paper you’re reading right now is an open source template freely available to anyone.
 - The Moonfish token sale website is itself available in source code. It’s the default portal that’s available in the Moonfish token sale application. In the future additional “themes” and skins can be made available.
 
-# Moonfish Tokens
+## 3. Towards a Decentralized Token Sale
 
-In the past year token offerings have become increasingly ambitious. There are countless large ICOs that have raised vast amounts of capital on little more than a sexy white paper with barely any working code. It is likely that future token offerings for startups are going to look more like traditional funding rounds, where early rounds are smaller and become larger as the project proofs out its ability to execute [@icos_dont_bite_off, @ico_rounds].
+Today, most transaction mechanics of buying tokens are handled by existing blockchains such as Ethereum and standards such as ERC20, but most other aspects of the token sale process are handled through custom centralized software.
 
-In the spirit of this, we are planning a small initial token pre-sale for Moonfish. The goal of this “Moonfish PoC Token Micro-Sale” is twofold: 1. Prove out that we can do a token sale with the Moonfish software (ICO the ICO software if you will); 2. Get some modest funding in place to support the development efforts of the project.
+The first version of Moonfish is an open source software that can be configured and deployed by any software developer. This solves the imminent need for secure, open, standardized and reliable token sale software. However, it is the long term goal of the Moonfish project to evolve these OSS instances into a DLT-powered network that provides an ecosystem for token sales.
 
-The core Moonfish platform is open source and will remain open source. The Moonfish PoC tokens will not have any baked in tokenomics initially. However, once we’ve proven our the MVP (see Roadmap), the goal is to develop a commercial extension of the platform, at which point we will introduce tokenomics to align incentives. These Moonfish PoC tokens will convert into this secondary offering. The exact details of the tokenomics and secondary offering mechanics are to be determined as the roadmap evolves.
+Creating a decentralized infrastructure for end-to-end token sales has numerous benefits:
 
-# Roadmap
+- Increased data security, integrity and resilience.
+- Secure and signed communication to counteract cybercrime.
+- Enhancing KYC by integrating with emerging Blockchain-powered person identification platforms and self-sovereign identity. [@civic, @blockchain_identity_management, @identity_bottleneck]
+- Leveraging the network to create social network effects to spread information about current token sales.
+- Increased potential for automation and derivative investments (for example buying into bundles or indices of certain asset classes).
+- Leveraging the new wave of cross-blockchain interoperability [@witnet_cross_chain, @atomic_action, @cosmos_network]
 
-_Phase 1: Proof of Concept Development_
+In order to incentivize the token sale ecosystem, there are numerous tokenomics mechanisms possible. At the basic level, the network could require a fee from token sellers to make use of the network. This fee (paid in Moonfish tokens) could get distributed among Moonfish token holders. More interestingly, there are many secondary fees that could be build into the mechanics. For example, token sellers could pay a promotional fee to increase visibility and propagation through the network. Finders fees or affiliate fees could be paid to participants that actually promote a sale, etc.
 
-Before undertaking any token sale we want to get a first version of the software up and running. This version will at the minimum include the security best practices and considerations mentioned herein. In addition to this, it will have a first cut of the whitelisting mechanism and participation logic needed for basic token sales.
-
-_Phase 2: Moonfish PoC ICO_
-
-This will be a small capped token sale for Moonfish PoC Tokens. We will be using the Moonfish platform to do this token sale. Once completed, it will be the first ICO performed using the Moonfish software. See “Moonfish Tokens” for more details about these tokens.
-
-_Phase 3: Proof of MVP_
-
-This phase is the “rinse and repeat” stage where we solicit feedback from the marketplace. The goal is to add additional capabilities and security features to the Moonfish software and to have it used by future token sales. Once we’re seeing steady usage of the software we will have proven out our Minimum Viable Product.
-
-_Phase 4: Tokenomics Development, Further Decentralization Roadmap & ICO_
-
-The MVP phase will give us a lot of feedback from the market. Based on this we can define a monetization strategy and longer term roadmap that incorporates tokenomics. This will involve a secondary token sale where we convert Moonfish POC tokens into the new token.
+Today, most token sales are done by organizations with legal entities that are grounded in the real world. These entities are subject to all relevant securities laws in their respective countries. In the past there have been attempts at creating a completely virtual and anonymous Decentralized Autonomous Organization - an organization that exists online in a completely digital jurist diction. There’s been numerous reasons why DAOs have not been successful to date, but work is continuing on several fronts to make DAOs a reality [@introducing_aragon, @the_dao_and_daos, @ai_daos, @ai_daos2]. The Moonfish decentralized token sale network can be instrumental in the march towards true DAOs and a self-sovereign republic.
 
 \clearpage
 
-# References
+## References
 
 ---
 title: "Moonfish - An Open Platform for Token Distribution"
@@ -144,11 +137,8 @@ abstract: |
 
 author:
 - name: Dominiek Ter Heide
-  affiliation: Rekall
+  affiliation: Rekall.ai
   email: dominiek@rekall.ai
-  linkedin: https://linkedin.com/dominiek
-  twitter: https://twitter.com/dominiek
-  github: https://github.com/dominiek
 
 titlepage: false
 titlepage-logo: include/moonfish-logo.pdf
